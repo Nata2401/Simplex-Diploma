@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modal = () => {\r\n  console.log('Hello');\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack:///./modules/modal.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modal = () => {\r\n  const modalCallback = document.querySelector('.modal-callback'); \r\n  const modalOverlay = document.querySelector('.modal-overlay');   \r\n  const body = document.querySelector('body');\r\n    \r\n  body.addEventListener('click', (e) => {\r\n    e.preventDefault();\r\n      if (e.target.closest('.header .fancyboxModal') ||\r\n         (e.target.closest('.button-services')) || \r\n         (e.target.closest('.services-elements .fancyboxModal'))) { \r\n            modalCallback.style.display = 'block';\r\n            modalOverlay.style.display = 'block';\r\n       } else if (e.target.closest('.modal-close') || (e.target.closest('.modal-overlay'))) {\r\n            modalCallback.style.display = 'none';\r\n            modalOverlay.style.display = 'none';\r\n      }\r\n  });\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack:///./modules/modal.js?");
 
 /***/ })
 
