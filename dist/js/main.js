@@ -16,7 +16,7 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n\r\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ \"./modules/slider.js\");\n\r\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n\r\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -27,6 +27,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modal = () => {\r\n  const modalCallback = document.querySelector('.modal-callback'); \r\n  const modalOverlay = document.querySelector('.modal-overlay');   \r\n  const body = document.querySelector('body');\r\n    \r\n  body.addEventListener('click', (e) => {\r\n    e.preventDefault();\r\n      if (e.target.closest('.header .fancyboxModal') ||\r\n         (e.target.closest('.button-services'))) { \r\n            modalCallback.style.display = 'block';\r\n            modalOverlay.style.display = 'block';\r\n       } else if (e.target.closest('.modal-close') || (e.target.closest('.modal-overlay'))) {\r\n            modalCallback.style.display = 'none';\r\n            modalOverlay.style.display = 'none';\r\n      }\r\n  });\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack:///./modules/modal.js?");
+
+/***/ }),
+
+/***/ "./modules/slider.js":
+/*!***************************!*\
+  !*** ./modules/slider.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst slider = () => {\r\n  const topSlider = document.querySelector('.top-slider');\r\n  const item = document.querySelectorAll('.item');\r\n  const table = document.querySelectorAll('.table');\r\n\r\n  const cssStyle = `\r\n  <style>\r\n      .top-slider .item.relative.active {\r\n          opacity: 1;\r\n          z-index: 3;\r\n      }\r\n      \r\n      .top-slider .item.relative {\r\n          opacity: 0;\r\n          transition: all 200ms ease-out;\r\n          position: absolute;\r\n          z-index: 1;\r\n          top: 0;\r\n          left: 0;\r\n          width: 100%;\r\n      }\r\n  `;\r\n  topSlider.insertAdjacentHTML('beforeEnd', cssStyle);\r\n  table[0].classList.add('active');\r\n  item[0].classList.add('active');\r\n   \r\n  let currentSlide = 0;\r\n\r\n  const prevSlide = (elems, index, strClass) => {\r\n      elems[index].classList.remove(strClass);\r\n  };\r\n\r\n  const nextSlide = (elems, index, strClass) => {\r\n      elems[index].classList.add(strClass);\r\n  };\r\n\r\n  const autoSlide = () => { \r\n      prevSlide(table, currentSlide, 'active');\r\n      prevSlide(item, currentSlide, 'active');\r\n      currentSlide++;\r\n\r\n      if (currentSlide >= table.length) {\r\n          currentSlide = 0;\r\n      }\r\n      nextSlide(table, currentSlide, 'active');\r\n      nextSlide(item, currentSlide, 'active');\r\n  };\r\n\r\n  const startSlide = () => {\r\n      setInterval(autoSlide, 3000);\r\n  };\r\n  startSlide();\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);\n\n//# sourceURL=webpack:///./modules/slider.js?");
 
 /***/ })
 
