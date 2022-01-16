@@ -1,10 +1,9 @@
 const carousel = () => {
   const slides = document.querySelectorAll('.services-elements>div>div'),
-    modalWindow = document.getElementById('application');
+  modalWindow = document.getElementById('application');
 
   const prev = document.querySelector('.services-arrow>.arrow-left');
   const next = document.querySelector('.services-arrow>.arrow-right');
-
 
   const responsive = [{
     breakpoint: 1240,
@@ -71,6 +70,7 @@ const carousel = () => {
     }
     hideSlide();
   });
+
   next.addEventListener('click', () => {
     ++start;
     ++finish;
