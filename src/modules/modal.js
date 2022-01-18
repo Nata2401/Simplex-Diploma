@@ -1,19 +1,21 @@
 const modal = () => {
-  const modalCallback = document.querySelector('.modal-callback'); 
-  const modalOverlay = document.querySelector('.modal-overlay');   
-  const body = document.querySelector('body');
-    
-  body.addEventListener('click', (e) => {
-    e.preventDefault();
-      if (e.target.closest('.header .fancyboxModal') ||
-         (e.target.closest('.button-services')) ||
-         (e.target.closest('.services-elements .fancyboxModal '))) { 
-            modalCallback.style.display = 'block';
-            modalOverlay.style.display = 'block';
-       } else if (e.target.closest('.modal-close') || (e.target.closest('.modal-overlay'))) {
-            modalCallback.style.display = 'none';
-            modalOverlay.style.display = 'none';
-      }
+  const modal = document.querySelector('.modal-callback');
+  const modalOverlay = document.querySelector('.modal-overlay');
+  const modalBtn = document.querySelectorAll('.fancyboxModal');
+
+  modalBtn.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      modal.style.display = 'block';
+      modalOverlay.style.display = 'block';
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal-overlay') || event.target.closest('.modal-close')) {
+      modal.style.display = 'none';
+      modalOverlay.style.display = 'none';
+    }
   });
 };
 export default modal;
