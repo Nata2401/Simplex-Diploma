@@ -1,7 +1,5 @@
 const menu = () => {
   const serviceBlockBtns = document.querySelectorAll('a[href^="#"]');
-  const mainLogo = document.querySelector('img[src^="images/logo.png"]').closest('a');
-  mainLogo.classList.add('mainLogo-head');
 
   serviceBlockBtns.forEach((el) => {
     if (el.closest('div.header') &&
