@@ -6,6 +6,7 @@ import accordion from "./modules/accordion";
 import validation from "./modules/validation";
 import sendForm from "./modules/sendForm";
 
+
 modal();
 slider();
 menu();
