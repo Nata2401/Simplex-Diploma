@@ -7,7 +7,6 @@ const sendForm = () => {
   const loadText = 'Отправляем...';
   const errorText = 'Ошибка...';
   const successText = 'Форма успешно отправлена!';
-  console.log('g');
 
   statusBlock.style.color = '#000000';
 

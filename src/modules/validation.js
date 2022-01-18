@@ -3,7 +3,6 @@ const validation = () => {
   const formElements = form.querySelectorAll('input');
   const inputFio = document.querySelector('input[name=fio]');
   const inputTel = document.querySelector('input[name=tel]');
-  console.log('h');
 
   const regName = /[^[а-яА-ЯёЁ ]*/g;
   const regTel = /[^[0-9+]*/g;
