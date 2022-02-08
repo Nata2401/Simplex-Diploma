@@ -4,7 +4,7 @@ const calc = () => {
     arrivalTimeElem = document.getElementById('num2'),
     staffMembersElem = document.getElementById('num4'),
     animationStart = 1100,
-    animationStop = 1500;
+    animationStop = 1300;
 
   const date = new Date();
   const year = date.getFullYear();
